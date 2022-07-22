@@ -1,7 +1,7 @@
 
 const createProduct = async (jsonProduct) => {
     try {
-        const response = await fetch(`https://programador2022.github.io/productos/productos.json`, {
+        const response = await fetch(`https://alura-geek-ecommerce.herokuapp.com/products`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -14,18 +14,18 @@ const createProduct = async (jsonProduct) => {
     }
 }
 
-const readProducts = () => fetch('https://programador2022.github.io/productos/productos.json').then(response => response.json());
+const readProducts = () => fetch('https://alura-geek-ecommerce.herokuapp.com/products').then(response => response.json());
 
-const readProduct = (id) => fetch(`https://programador2022.github.io/productos/productos.json/${id}`).then(response => response.json());
+const readProduct = (id) => fetch(`https://alura-geek-ecommerce.herokuapp.com/products/${id}`).then(response => response.json());
 
 const deleteProduct = (id) => {
-    return fetch(`/${id}`, {
+    return fetch(`https://alura-geek-ecommerce.herokuapp.com/products/${id}`, {
         method: 'DELETE'
     });
 };
 
 const updateProduct = (id, jsonProduct) => {
-    return fetch(`https://programador2022.github.io/productos/productos.json/${id}`, {
+    return fetch(`https://alura-geek-ecommerce.herokuapp.com/products/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
